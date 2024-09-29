@@ -19,6 +19,9 @@ __pycache__/
 .idea/
 .vscode/
 
+# Ignore user data
+data/user_data.json
+
 # Distribution / packaging
 .Python
 build/
