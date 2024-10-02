@@ -5,8 +5,10 @@ import json
 class GigaChatController:
 	def __init__(self):
 		self.messages = []
-		# Инициализация GigaChat
+		self.initialize()
 
+	def initialize(self):
+		# Инициализация GigaChat
 		url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
 
 		# Создадим идентификатор UUID (36 знаков)
@@ -20,6 +22,7 @@ class GigaChatController:
 			'Authorization': 'Basic NzFhNDUzNDctOWE2ZS0-----------------------------C05ZDhkLWQwZDE5M2JkN2U5YQ=='
 		}
 		self.auth = requests.post(url, headers=headers, data=payload, verify=False)
+		
 
 	# Генерация сообщения GigaChat
 	def generate_response(self, user_message):
